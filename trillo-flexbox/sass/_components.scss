@@ -19,6 +19,12 @@
     justify-content: center;
     align-items: center;
 
+    @media only screen and (max-width: $bp-xs){
+        order: 1;
+        background-color: var(--color-grey-light-2);
+        flex: 0 0 100%;
+    }
+
     &__input {
         font-family: inherit;
         font-size: 1.3rem;
@@ -158,12 +164,29 @@
     list-style: none;
     margin-top: 3.5rem;
 
+
+
+    @media only screen and (max-width: $bp-m){
+        display: flex;
+        margin: 0;
+    }
+
     &__item{
 
         position: relative;
         &:not(:last-child){
             margin-bottom: .5rem;
+
+            @media only screen and (max-width: $bp-m){
+                margin-bottom: none;
+            }
         }
+
+        @media only screen and (max-width: $bp-m){
+            flex: 1;
+
+        }
+
 
     }
 
@@ -208,6 +231,17 @@
     
         position: relative;
         z-index: 1;
+
+        @media only screen and (max-width: $bp-m){
+            padding: 2rem;
+            justify-content: center;
+        }
+
+        @media only screen and (max-width: $bp-s){
+            flex-direction: column;
+            padding: 1.25rem .5rem;
+        }
+    
     }
 
     &__icon{
@@ -216,6 +250,13 @@
         height: 1.75rem;
         fill: currentColor;
         margin-right: 2rem;
+
+        @media only screen and (max-width: $bp-s){
+            margin-right: 0;
+            margin-bottom: 3px;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
 
     }
 }
@@ -228,6 +269,10 @@
     text-align: center;
     padding: 2.5rem;
     color: var(--color-grey-light-4);
+
+    @media only screen and (max-width: $bp-m){
+        display: none;
+    }
 }
 
 ////////////////////////////////////////////////
@@ -262,6 +307,11 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         padding: 1.5rem 3rem;
+
+        @media only screen and (max-width: $bp-s){
+            font-size: 1.8rem;
+            padding: 1rem 2rem;
+        }
 
     }
 
@@ -309,6 +359,9 @@
         justify-content: center;
         box-shadow: inset 0 0 .5rem rgba(0,0,0,0.2);
 
+        @media only screen and (max-width: $bp-s){
+            padding: 0 1.5rem;
+        }
 
     }
 
@@ -319,12 +372,20 @@
         font-weight: 300;
         margin-bottom: -3px;
 
+        @media only screen and (max-width: $bp-s){
+            font-size: 1.8rem;
+        }
+
     }
 
     &__rating-count{
 
         font-size: .8rem;
         text-transform: uppercase;
+
+        @media only screen and (max-width: $bp-s){
+            font-size: .5rem;
+        }
 
     }
 }
@@ -430,15 +491,24 @@
        
         //Modern Browsers
 
-        //background-color: black;
-        //--webkit-mask-image: url(../img/chevron-thin-right.svg);
-        //--webkit-mask-size: cover;
+        
 
          //Older Browsers
          background-image: url(../img/chevron-thin-right.svg);
          background-size: cover;
  
-    
+         /*
+         @supports (--webkit-mask-image: url()) or (mask-image: url()) {
+
+        background-color: var(--color-primary);
+        --webkit-mask-image: url(../img/chevron-thin-right.svg);
+        --webkit-mask-size: cover;
+        mask-image: url(../img/chevron-thin-right.svg);
+        mask-size: cover;
+        background-image: none;
+           
+        }
+         */
     }
 
 }
@@ -455,11 +525,14 @@
     display: flex;
     align-items: center;
     
-
     &__count{
 
         margin-right: auto;
 
+    }
+
+    &__friends{
+        display: flex;
     }
 
     &__photo{
@@ -472,7 +545,7 @@
         border: 3px solid #ffffff;
 
         &:not(:last-child){
-            margin-right: -1.5rem;
+            margin-right: -2rem;
         }
     }
 
@@ -489,6 +562,11 @@
     margin-bottom: 3.5rem;
     position: relative;
     overflow: hidden;
+
+    @media only screen and (max-width: $bp-m){
+        padding: 2rem;
+        margin-bottom: 2.5rem;
+    }
 
     &::before{
 
@@ -580,6 +658,11 @@
         font-size: 1.5rem;
         font-weight: 300;
         margin-bottom: 2.5rem;
+    }
+
+    @media only screen and (max-width: $bp-m){
+        padding: 2.5rem 0;
+       
     }
 
 }
